@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Guelbert Gabunada Jr. | Full Stack Web Developer &amp; Computer Engineer</title>
+<meta name="description" content="Portfolio of Guelbert Gabunada Jr., a Full Stack Web Developer and Computer Engineer building MERN applications, RESTful APIs, and IoT solutions."/>
+<meta name="author" content="Guelbert Gabunada Jr."/>
+<meta name="theme-color" content="#07080c"/>
+
+<!-- Favicon (inline SVG monogram, no extra file needed) -->
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%234f46e5'/%3E%3Ctext x='32' y='45' font-family='Arial,Helvetica,sans-serif' font-size='38' font-weight='700' text-anchor='middle' fill='white'%3EG%3C/text%3E%3C/svg%3E"/>
+
+<!-- Open Graph Meta Tags -->
+<meta property="og:type" content="website"/>
+<meta property="og:site_name" content="Guelbert Gabunada Jr. Portfolio"/>
+<meta property="og:title" content="Guelbert Gabunada Jr. | Full Stack Web Developer &amp; Computer Engineer"/>
+<meta property="og:description" content="MERN applications, RESTful APIs, and IoT solutions. Explore my projects, tools, and resume."/>
+<meta property="og:url" content="https://YOUR-USERNAME.github.io/YOUR-REPO/"/>
+<meta property="og:image" content="https://lh3.googleusercontent.com/aida-public/AB6AXuBN-HwdoQb2z2WR5l_krg6l7FvYOJvYQ76qwkwDnIuvDiXsLOr6jWRGRqfDpEpiu7U0qSK6H21eo1gJ1JttVt8RmKjvT92K3z91AHEAMbfjKt3MHFPEwgwSpLp-p_87vz5065MH0vgbxNIHRhVAA5CE22OeqCtjf9hLRnT33Ev5yte_3ITFl-DtbpgsELfERC2lOeULOj9nPkjzFMfyFmxSv59BcxaAy5HItnv6HF9Hh78U0QHwUniV6jjhyjHi1XPe3HM"/>
+<meta property="og:image:alt" content="Portrait of Guelbert Gabunada Jr., Full Stack Web Developer and Computer Engineer"/>
+<meta property="og:locale" content="en_US"/>
+
+<!-- Twitter / X Card (reuses the Open Graph values) -->
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Guelbert Gabunada Jr. | Full Stack Web Developer &amp; Computer Engineer"/>
+<meta name="twitter:description" content="MERN applications, RESTful APIs, and IoT solutions. Explore my projects, tools, and resume."/>
+<meta name="twitter:image" content="https://lh3.googleusercontent.com/aida-public/AB6AXuBN-HwdoQb2z2WR5l_krg6l7FvYOJvYQ76qwkwDnIuvDiXsLOr6jWRGRqfDpEpiu7U0qSK6H21eo1gJ1JttVt8RmKjvT92K3z91AHEAMbfjKt3MHFPEwgwSpLp-p_87vz5065MH0vgbxNIHRhVAA5CE22OeqCtjf9hLRnT33Ev5yte_3ITFl-DtbpgsELfERC2lOeULOj9nPkjzFMfyFmxSv59BcxaAy5HItnv6HF9Hh78U0QHwUniV6jjhyjHi1XPe3HM"/>
+<!-- Font Awesome Icons -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet"/>
+<!-- Google Fonts: Inter & JetBrains Mono -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS v3 with plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script data-purpose="tailwind-config">
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+          colors: {
+            brand: {
+              50: '#eef2ff',
+              100: '#e0e7ff',
+              400: '#818cf8',
+              500: '#6366f1',
+              600: '#4f46e5',
+              700: '#4338ca',
+            },
+            dark: {
+              950: '#07080c',
+              900: '#0c0e14',
+              850: '#11141c',
+              800: '#171b26',
+              700: '#23293a',
+            }
+          }
+        }
+      }
+    }
+  </script>
+<!-- BEGIN: Custom Styles -->
+<style data-purpose="custom-theme">
+    body {
+      background-color: #07080c;
+      color: #e2e8f0;
+      overflow-x: hidden;
+    }
+    
+    /* Subtle dot grid backdrop */
+    .bg-grid-pattern {
+      background-image: radial-gradient(rgba(255, 255, 255, 0.07) 1px, transparent 1px);
+      background-size: 32px 32px;
+    }
+    
+    /* Ambient glow elements */
+    .glow-sphere {
+      position: absolute;
+      border-radius: 9999px;
+      filter: blur(100px);
+      pointer-events: none;
+      opacity: 0.15;
+    }
+
+    /* Accessibility: keep anchored sections clear of the sticky header */
+    html { scroll-padding-top: 5rem; }
+
+    /* Accessibility: clear keyboard focus indicator */
+    a:focus-visible, button:focus-visible {
+      outline: 2px solid #818cf8;
+      outline-offset: 3px;
+      border-radius: 6px;
+    }
+
+    /* Accessibility: respect reduced-motion preference */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+
+    /* Custom scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #090a0f;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #23293a;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #4f46e5;
+    }
+  </style>
+<!-- END: Custom Styles -->
+</head>
+<body class="bg-dark-950 text-slate-200 antialiased selection:bg-brand-500 selection:text-white relative">
+<!-- Accessibility: skip link for keyboard / screen-reader users -->
+<a class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[100] focus:px-4 focus:py-2 focus:rounded-lg focus:bg-white focus:text-dark-950 focus:font-semibold" href="#main-content">Skip to main content</a>
+<!-- Ambient light glows -->
+<div aria-hidden="true" class="glow-sphere w-[600px] h-[600px] bg-indigo-600 top-[-100px] left-1/2 -translate-x-1/2 -z-10"></div>
+<div aria-hidden="true" class="glow-sphere w-[500px] h-[500px] bg-blue-600 top-[1200px] right-[-100px] -z-10"></div>
+<div aria-hidden="true" class="glow-sphere w-[550px] h-[550px] bg-purple-600 top-[2400px] left-[-150px] -z-10"></div>
+<!-- BEGIN: Navigation -->
+<header class="sticky top-0 z-50 backdrop-blur-md bg-dark-950/85 border-b border-slate-800/80 transition-all duration-300">
+<div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+<!-- Brand Logo -->
+<a aria-label="Guelbert Gabunada Jr., back to top" class="group flex items-center gap-3" href="#about">
+<span class="text-xl font-bold tracking-wider text-white group-hover:text-brand-400 transition-colors">GIL</span>
+<span class="text-xs uppercase tracking-widest text-slate-400 font-mono hidden sm:inline-block border-l border-slate-800 pl-3">Full Stack Dev</span>
+</a>
+<!-- Desktop Nav Links -->
+<nav aria-label="Main navigation" class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
+<a class="hover:text-brand-400 transition-colors py-1" href="#about">About Me</a>
+<a class="hover:text-brand-400 transition-colors py-1" href="#projects">Project</a>
+<a class="hover:text-brand-400 transition-colors py-1" href="#tools">Tools</a>
+<a class="hover:text-brand-400 transition-colors py-1 inline-flex items-center gap-1.5" download="" href="guelbert_gabunada_jr_Resume.pdf">Resume<i aria-hidden="true" class="fa-solid fa-download text-[10px]"></i></a>
+<a class="px-5 py-2 rounded-full bg-brand-600 text-white font-semibold text-xs uppercase tracking-wider hover:bg-brand-500 transition-all duration-300 shadow-lg shadow-brand-600/30 hover:shadow-brand-500/50 hover:scale-105" href="#contact">
+          Contact
+        </a>
+</nav>
+<!-- Mobile Menu Button -->
+<button aria-controls="mobile-menu" aria-expanded="false" aria-label="Toggle navigation menu" class="md:hidden text-slate-300 hover:text-white focus:outline-none p-2 text-xl" data-purpose="toggle-mobile-menu" id="mobile-menu-btn">
+<i aria-hidden="true" class="fa-solid fa-bars"></i>
+</button>
+</div>
+<!-- Mobile dropdown menu -->
+<nav aria-label="Mobile navigation" class="hidden md:hidden px-6 pt-3 pb-6 border-b border-slate-800 bg-dark-900 flex flex-col gap-4 text-sm font-medium" id="mobile-menu">
+<a class="text-slate-300 hover:text-brand-400 py-1" href="#about">About Me</a>
+<a class="text-slate-300 hover:text-brand-400 py-1" href="#projects">Project</a>
+<a class="text-slate-300 hover:text-brand-400 py-1" href="#tools">Tools</a>
+<a class="text-slate-300 hover:text-brand-400 py-1" download="" href="guelbert_gabunada_jr_Resume.pdf">Download Resume</a>
+<a class="w-full text-center px-5 py-2.5 rounded-full bg-brand-600 text-white font-semibold text-xs uppercase tracking-wider" href="#contact">
+        Contact
+      </a>
+</nav>
+</header>
+<!-- END: Navigation -->
+<main id="main-content" tabindex="-1">
+<!-- BEGIN: Hero & About Me Section -->
+<section aria-labelledby="hero-heading" class="relative pt-12 pb-24 md:py-28 overflow-hidden bg-grid-pattern" id="about">
+<div class="max-w-7xl mx-auto px-6">
+<!-- Top Title Tag -->
+<div class="text-center mb-12 lg:mb-16">
+<div class="inline-flex items-center gap-2 px-5 py-2 rounded-full border border-slate-800 bg-dark-900/90 text-sm md:text-base font-mono font-medium text-slate-200 shadow-inner">
+<span class="text-brand-400">&lt;</span>
+<span class="text-white">Full Stack Web Developer</span>
+<span class="text-brand-400">&gt;</span>
+<span class="text-slate-400 mx-2">|</span>
+<span class="text-brand-400">&lt;</span>
+<span class="text-white">Computer Engineer</span>
+<span class="text-brand-400">&gt;</span>
+</div>
+</div>
+<!-- Hero Grid Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center">
+<!-- Left Column: Biography Paragraph -->
+<div class="lg:col-span-4 order-2 lg:order-1 flex flex-col justify-center">
+<div class="p-6 md:p-8 rounded-2xl bg-dark-900/60 border border-slate-800/80 backdrop-blur-sm shadow-xl relative group hover:border-slate-700 transition duration-300">
+<div class="absolute -top-3 left-6 px-3 py-0.5 bg-dark-800 border border-slate-700 rounded-md text-[11px] font-mono text-brand-400 uppercase tracking-widest">
+              Biography
+            </div>
+<p class="text-slate-300 text-sm md:text-[14.5px] leading-relaxed font-normal">
+              I am a passionate Computer Engineering graduate and Full Stack Developer focused on building efficient, modern web applications and hardware-software systems. With practical experience spanning full-stack development, network security, and real-time database management, I bring a strong analytical mindset to solving complex technical challenges. From architecting RESTful APIs and interactive MERN applications to engineering smart IoT and microgrid solutions, I am driven by a passion for continuous learning and delivering seamless, user-centric technology.
+            </p>
+</div>
+</div>
+<!-- Center Column: Portrait Container (Directly sourced from https://lh3.googleusercontent.com/aida-public/AB6AXuAugnuWOqph9HOZvJQhHXnWjeNsy_NjZgD9DeI8WAyYhH8Gf7VxZYWJWgNapchHZ-vUX-n4ZPcMvw8rEt76GsBFUCleWmtx2cIKwImyUxj26FrsS3v4A3ZR1m4TQc1Tb6XT9o9aENpNklRLDLSUvmQgMAQrp6vRNWfb54Us3letjnLYe80efsJnquvMTp2W6HpIs0ScTkhaEEISEOAnhMNqos3vc8sHSniFehXOpaa3Wrpjr0KfGljaEKBE5vwi4SVaNac) -->
+<div class="lg:col-span-4 order-1 lg:order-2 flex justify-center">
+<div class="relative w-full max-w-[340px] sm:max-w-[390px] aspect-[4/5] rounded-3xl overflow-hidden border-2 border-slate-800/90 shadow-2xl bg-dark-900 group">
+<!-- Glow ring behind image -->
+<div class="absolute inset-0 bg-gradient-to-t from-dark-950 via-transparent to-transparent z-10 opacity-70 group-hover:opacity-40 transition duration-500"></div>
+<img alt="Guelbert Gabunada Jr. - Full Stack Web Developer and Computer Engineer" class="w-full h-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBN-HwdoQb2z2WR5l_krg6l7FvYOJvYQ76qwkwDnIuvDiXsLOr6jWRGRqfDpEpiu7U0qSK6H21eo1gJ1JttVt8RmKjvT92K3z91AHEAMbfjKt3MHFPEwgwSpLp-p_87vz5065MH0vgbxNIHRhVAA5CE22OeqCtjf9hLRnT33Ev5yte_3ITFl-DtbpgsELfERC2lOeULOj9nPkjzFMfyFmxSv59BcxaAy5HItnv6HF9Hh78U0QHwUniV6jjhyjHi1XPe3HM"/>
+<!-- Status Indicator Overlay -->
+<div class="absolute bottom-4 left-4 right-4 z-20 flex items-center justify-between px-4 py-2 rounded-xl bg-dark-900/85 backdrop-blur-md border border-slate-800 text-xs">
+<div class="flex items-center gap-2">
+<span class="relative flex h-2.5 w-2.5">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
+</span>
+<span class="text-slate-300 font-mono text-[11px]">Available for Projects</span>
+</div>
+<span class="text-slate-400 font-mono text-[11px]">SF Bay Area / Remote</span>
+</div>
+</div>
+</div>
+<!-- Right Column: Greeting & Name Block -->
+<div class="lg:col-span-4 order-3 flex flex-col justify-center lg:pl-4">
+<div class="space-y-4">
+<span class="text-xs uppercase tracking-widest font-mono font-semibold text-brand-400 block">
+              HELLO, I'M
+            </span>
+<h1 id="hero-heading" class="text-4xl sm:text-5xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight">
+              Guelbert Gabunada Jr
+            </h1>
+<p class="text-slate-400 text-sm leading-relaxed">
+              Transforming complex engineering paradigms into intuitive, performant, and resilient digital architectures.
+            </p>
+<!-- Quick Action Links -->
+<div class="pt-4 flex flex-wrap gap-4 items-center">
+<a class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-white text-dark-950 font-semibold text-xs tracking-wider uppercase hover:bg-slate-200 transition" href="#projects">
+<span>View Projects</span>
+<i aria-hidden="true" class="fa-solid fa-arrow-down text-[10px]"></i>
+</a>
+<a class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl border border-slate-800 bg-dark-900/70 hover:bg-dark-800 text-slate-300 font-semibold text-xs tracking-wider uppercase transition" href="#contact">
+<span>Get In Touch</span>
+<i aria-hidden="true" class="fa-solid fa-envelope text-[11px] text-brand-400"></i>
+</a>
+<a aria-label="Download resume (PDF)" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-brand-600 hover:bg-brand-500 text-white font-semibold text-xs tracking-wider uppercase transition shadow-lg shadow-brand-600/30" download="" href="guelbert_gabunada_jr_Resume.pdf">
+<span>Resume</span>
+<i aria-hidden="true" class="fa-solid fa-download text-[11px]"></i>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- END: Hero & About Me Section -->
+<!-- BEGIN: Tools & Technologies Section -->
+<section aria-labelledby="tools-heading" class="py-24 border-t border-slate-800/80 bg-dark-900/30 relative" id="tools">
+<div class="max-w-7xl mx-auto px-6">
+<!-- Section Header -->
+<div class="text-center max-w-2xl mx-auto mb-16">
+<h2 id="tools-heading" class="text-2xl sm:text-3xl md:text-4xl font-bold text-white tracking-tight mb-3">
+          Tools &amp; Technologies
+        </h2>
+<p class="text-slate-400 text-sm md:text-base">
+          Core toolchain, programming languages, and industry standards I leverage daily.
+        </p>
+</div>
+<!-- Tools Grid (Matching Image 2) -->
+<div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 sm:gap-5 max-w-5xl mx-auto">
+<!-- HTML5 -->
+<div class="group p-5 rounded-2xl bg-dark-900/80 border border-slate-800 hover:border-orange-500/50 hover:bg-dark-850 hover:-translate-y-1 transition duration-300 flex flex-col items-center justify-center gap-3">
+<i aria-hidden="true" class="fa-brands fa-html5 text-3xl sm:text-4xl text-orange-500 group-hover:scale-110 transition duration-300"></i>
+<span class="text-xs sm:text-sm font-medium text-slate-300 group-hover:text-white">HTML5</span>
+</div>
+<!-- CSS3 -->
+<div class="group p-5 rounded-2xl bg-dark-900/80 border border-slate-800 hover:border-blue-500/50 hover:bg-dark-850 hover:-translate-y-1 transition duration-300 flex flex-col items-center justify-center gap-3">
+<i aria-hidden="true" class="fa-brands fa-css3-alt text-3xl sm:text-4xl text-blue-500 group-hover:scale-110 transition duration-300"></i>
+<span class="text-xs sm:text-sm font-medium text-slate-300 group-hover:text-white">CSS3</span>
+</div>
+<!-- JavaScript -->
+<div class="group p-5 rounded-2xl bg-dark-900/80 border border-slate-800 hover:border-yellow-400/50 hover:bg-dark-850 hover:-translate-y-1 transition duration-300 flex flex-col items-center justify-center gap-3">
+<i aria-hidden="true" class="fa-brands fa-square-js text-3xl sm:text-4xl text-yellow-400 group-hover:scale-110 transition duration-300"></i>
+<span class="text-xs sm:text-sm font-medium text-slate-300 group-hover:text-white">JavaScript</span>
+</div>
+<!-- Bootstrap -->
+<div class="group p-5 rounded-2xl bg-dark-900/80 border border-slate-800 hover:border-purple-500/50 hover:bg-dark-850 hover:-translate-y-1 transition duration-300 flex flex-col items-center justify-center gap-3">
+<i aria-hidden="true" class="fa-brands fa-bootstrap text-3xl sm:text-4xl text-purple-500 group-hover:scale-110 transition duration-300"></i>
+<span class="text-xs sm:text-sm font-medium text-slate-300 group-hover:text-white">Bootstrap</span>
+</div>
+<!-- React -->
+<div class="group p-5 rounded-2xl bg-dark-900/80 border border-slate-800 hover:border-cyan-400/50 hover:bg-dark-850 hover:-translate-y-1 transition duration-300 flex flex-col items-center justify-center gap-3">
+<i aria-hidden="true" class="fa-brands fa-react text-3xl sm:text-4xl text-cyan-400 group-hover:scale-110 transition duration-300 animate-spin-slow"></i>
+<span class="text-xs sm:text-sm font-medium text-slate-300 group-hover:text-white">React</span>
+</div>
+<!-- Node.js -->
+<div class="group p-5 rounded-2xl bg-dark-900/80 border border-slate-800 hover:border-emerald-500/50 hover:bg-dark-850 hover:-translate-y-1 transition duration-300 flex flex-col items-center justify-center gap-3">
+<i aria-hidden="true" class="fa-brands fa-node-js text-3xl sm:text-4xl text-emerald-500 group-hover:scale-110 transition duration-300"></i>
+<span class="text-xs sm:text-sm font-medium text-slate-300 group-hover:text-white">Node.js</span>
+</div>
+<!-- Express.js -->
+<div class="group p-5 rounded-2xl bg-dark-900/80 border border-slate-800 hover:border-slate-400/50 hover:bg-dark-850 hover:-translate-y-1 transition duration-300 flex flex-col items-center justify-center gap-3">
+<div class="h-9 sm:h-10 flex items-center justify-center text-slate-200 font-mono text-xl sm:text-2xl font-bold tracking-tight">ex</div>
+<span class="text-xs sm:text-sm font-medium text-slate-300 group-hover:text-white">Express.js</span>
+</div>
+<!-- MongoDB -->
+<div class="group p-5 rounded-2xl bg-dark-900/80 border border-slate-800 hover:border-green-500/50 hover:bg-dark-850 hover:-translate-y-1 transition duration-300 flex flex-col items-center justify-center gap-3">
+<i aria-hidden="true" class="fa-solid fa-leaf text-3xl sm:text-4xl text-green-500 group-hover:scale-110 transition duration-300"></i>
+<span class="text-xs sm:text-sm font-medium text-slate-300 group-hover:text-white">MongoDB</span>
+</div>
+<!-- Git -->
+<div class="group p-5 rounded-2xl bg-dark-900/80 border border-slate-800 hover:border-orange-600/50 hover:bg-dark-850 hover:-translate-y-1 transition duration-300 flex flex-col items-center justify-center gap-3">
+<i aria-hidden="true" class="fa-brands fa-git-alt text-3xl sm:text-4xl text-orange-600 group-hover:scale-110 transition duration-300"></i>
+<span class="text-xs sm:text-sm font-medium text-slate-300 group-hover:text-white">Git</span>
+</div>
+<!-- Postman -->
+<div class="group p-5 rounded-2xl bg-dark-900/80 border border-slate-800 hover:border-amber-500/50 hover:bg-dark-850 hover:-translate-y-1 transition duration-300 flex flex-col items-center justify-center gap-3">
+<i aria-hidden="true" class="fa-solid fa-rocket text-3xl sm:text-4xl text-amber-500 group-hover:scale-110 transition duration-300"></i>
+<span class="text-xs sm:text-sm font-medium text-slate-300 group-hover:text-white">Postman</span>
+</div>
+<!-- VS Code -->
+<div class="group p-5 rounded-2xl bg-dark-900/80 border border-slate-800 hover:border-blue-400/50 hover:bg-dark-850 hover:-translate-y-1 transition duration-300 flex flex-col items-center justify-center gap-3">
+<i aria-hidden="true" class="fa-solid fa-code text-3xl sm:text-4xl text-blue-400 group-hover:scale-110 transition duration-300"></i>
+<span class="text-xs sm:text-sm font-medium text-slate-300 group-hover:text-white">VS Code</span>
+</div>
+<!-- GitHub -->
+<div class="group p-5 rounded-2xl bg-dark-900/80 border border-slate-800 hover:border-slate-300/50 hover:bg-dark-850 hover:-translate-y-1 transition duration-300 flex flex-col items-center justify-center gap-3">
+<i aria-hidden="true" class="fa-brands fa-github text-3xl sm:text-4xl text-white group-hover:scale-110 transition duration-300"></i>
+<span class="text-xs sm:text-sm font-medium text-slate-300 group-hover:text-white">GitHub</span>
+</div>
+</div>
+</div>
+</section>
+<!-- END: Tools & Technologies Section -->
+<!-- BEGIN: Projects Section -->
+<section aria-labelledby="projects-heading" class="py-24 border-t border-slate-800/80 relative" id="projects">
+<div class="max-w-7xl mx-auto px-6">
+<!-- Section Header -->
+<div class="text-center max-w-2xl mx-auto mb-16">
+<h2 id="projects-heading" class="text-2xl sm:text-3xl md:text-4xl font-bold text-white tracking-tight mb-3">
+          My Projects
+        </h2>
+<p class="text-slate-400 text-sm md:text-base">
+          Showcase of backend API architectures, full-stack MERN systems, and engineering capstones.
+        </p>
+</div>
+<!-- Projects Grid (Replicating all items from Image 3) -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Card 1: E-commerce API Documentation -->
+<div class="group flex flex-col rounded-2xl bg-dark-900 border border-slate-800 hover:border-slate-600 transition-all duration-300 overflow-hidden hover:shadow-xl hover:shadow-indigo-950/30">
+<!-- Thumbnail Mockup / Header Banner -->
+<div aria-hidden="true" class="h-48 bg-slate-900 border-b border-slate-800 relative overflow-hidden flex flex-col items-center justify-center p-4 bg-gradient-to-br from-slate-900 to-indigo-950/40">
+<div class="w-full h-full rounded-xl border border-slate-700/60 bg-dark-950/80 p-3 flex flex-col justify-between font-mono text-[10px] text-slate-400">
+<div class="flex items-center justify-between pb-1 border-b border-slate-800">
+<span class="text-emerald-400">GET /api/products</span>
+<span class="text-xs text-brand-400 font-bold">200 OK</span>
+</div>
+<div class="text-slate-400 truncate">{ "inventory": true, "sync": "active" }</div>
+<div class="flex items-center gap-2 pt-1 border-t border-slate-800 text-[9px] text-slate-400">
+<i aria-hidden="true" class="fa-solid fa-cube text-brand-400"></i>
+<span>E-Commerce API Gateway</span>
+</div>
+</div>
+</div>
+<!-- Body -->
+<div class="p-5 flex-1 flex flex-col justify-between">
+<div>
+<h3 class="text-base font-semibold text-white group-hover:text-brand-400 transition-colors mb-2">
+                E-commerce API Documentation
+              </h3>
+<p class="text-xs text-slate-400 leading-relaxed">
+                Dynamic E-Commerce Workflow Management. The System features dynamic routes for order processing, real-time inventory updates, and secure user authentication. It also supports seamless automated order reporting and comprehensive product management. Documented Backend API published publicly using Postman.
+              </p>
+</div>
+<div class="pt-4 mt-4 border-t border-slate-800/80 flex items-center justify-between">
+<span class="text-[11px] font-mono text-brand-400">REST • Postman</span>
+<a aria-label="Docs: E-commerce API Documentation" class="text-xs text-slate-400 hover:text-white inline-flex items-center gap-1 font-medium transition" href="#contact">
+<span>Docs</span>
+<i aria-hidden="true" class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+</a>
+</div>
+</div>
+</div>
+<!-- Card 2: Course Booking API Documentation -->
+<div class="group flex flex-col rounded-2xl bg-dark-900 border border-slate-800 hover:border-slate-600 transition-all duration-300 overflow-hidden hover:shadow-xl hover:shadow-indigo-950/30">
+<div aria-hidden="true" class="h-48 bg-slate-900 border-b border-slate-800 relative overflow-hidden flex flex-col items-center justify-center p-4 bg-gradient-to-br from-slate-900 to-blue-950/40">
+<div class="w-full h-full rounded-xl border border-slate-700/60 bg-dark-950/80 p-3 flex flex-col justify-between font-mono text-[10px] text-slate-400">
+<div class="flex items-center justify-between pb-1 border-b border-slate-800">
+<span class="text-blue-400">POST /api/enroll</span>
+<span class="text-xs text-emerald-400 font-bold">201 CREATED</span>
+</div>
+<div class="text-slate-400 truncate">Course Booking API Architecture</div>
+<div class="flex items-center gap-2 pt-1 border-t border-slate-800 text-[9px] text-slate-400">
+<i aria-hidden="true" class="fa-solid fa-server text-blue-400"></i>
+<span>JWT Authorization • Endpoints</span>
+</div>
+</div>
+</div>
+<div class="p-5 flex-1 flex flex-col justify-between">
+<div>
+<h3 class="text-base font-semibold text-white group-hover:text-brand-400 transition-colors mb-2">
+                Course Booking API Documentation
+              </h3>
+<p class="text-xs text-slate-400 leading-relaxed">
+                RESTful API for managing course enrollments, authentication, and retrieval if user details, Supports course creation updates, archiving, activation, and student enrollment. Publicly documented using Postman.
+              </p>
+</div>
+<div class="pt-4 mt-4 border-t border-slate-800/80 flex items-center justify-between">
+<span class="text-[11px] font-mono text-brand-400">Node • Express</span>
+<a aria-label="Docs: Course Booking API Documentation" class="text-xs text-slate-400 hover:text-white inline-flex items-center gap-1 font-medium transition" href="#contact">
+<span>Docs</span>
+<i aria-hidden="true" class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+</a>
+</div>
+</div>
+</div>
+<!-- Card 3: Course Booking App -->
+<div class="group flex flex-col rounded-2xl bg-dark-900 border border-slate-800 hover:border-slate-600 transition-all duration-300 overflow-hidden hover:shadow-xl hover:shadow-indigo-950/30">
+<div aria-hidden="true" class="h-48 bg-slate-900 border-b border-slate-800 relative overflow-hidden flex flex-col items-center justify-center p-4 bg-gradient-to-br from-slate-900 to-purple-950/40">
+<div class="w-full h-full rounded-xl border border-slate-700/60 bg-dark-950/80 p-3 flex flex-col justify-between text-xs text-slate-300">
+<div class="flex items-center gap-2">
+<div class="w-2 h-2 rounded-full bg-red-400"></div>
+<div class="w-2 h-2 rounded-full bg-yellow-400"></div>
+<div class="w-2 h-2 rounded-full bg-green-400"></div>
+<span class="text-[10px] font-mono text-slate-400 ml-auto">course-portal.app</span>
+</div>
+<div class="space-y-1.5 my-auto">
+<div class="h-2 w-3/4 bg-slate-700 rounded"></div>
+<div class="h-2 w-1/2 bg-slate-800 rounded"></div>
+</div>
+<div class="text-[9px] font-mono text-brand-400">MERN Dashboard View</div>
+</div>
+</div>
+<div class="p-5 flex-1 flex flex-col justify-between">
+<div>
+<h3 class="text-base font-semibold text-white group-hover:text-brand-400 transition-colors mb-2">
+                Course Booking App
+              </h3>
+<p class="text-xs text-slate-400 leading-relaxed">
+                A MERN-stack course enrollment system featuring user registration, authentication, and profile management. Authenticated users can create, update, archive, and activate courses. The Platform also allows users to browse available courses and enroll seamlessly.
+              </p>
+</div>
+<div class="pt-4 mt-4 border-t border-slate-800/80 flex items-center justify-between">
+<span class="text-[11px] font-mono text-brand-400">React • MongoDB</span>
+<a aria-label="View App: Course Booking App" class="text-xs text-slate-400 hover:text-white inline-flex items-center gap-1 font-medium transition" href="#contact">
+<span>View App</span>
+<i aria-hidden="true" class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+</a>
+</div>
+</div>
+</div>
+<!-- Card 4: E-Commerce App -->
+<div class="group flex flex-col rounded-2xl bg-dark-900 border border-slate-800 hover:border-slate-600 transition-all duration-300 overflow-hidden hover:shadow-xl hover:shadow-indigo-950/30">
+<div aria-hidden="true" class="h-48 bg-slate-900 border-b border-slate-800 relative overflow-hidden flex flex-col items-center justify-center p-4 bg-gradient-to-br from-slate-900 to-emerald-950/40">
+<div class="w-full h-full rounded-xl border border-slate-700/60 bg-dark-950/80 p-3 flex flex-col justify-between text-xs text-slate-300">
+<div class="flex items-center justify-between text-[10px] font-mono text-slate-400">
+<span>E-Storefront</span>
+<i aria-hidden="true" class="fa-solid fa-cart-shopping text-emerald-400"></i>
+</div>
+<div class="grid grid-cols-2 gap-2 my-1">
+<div class="h-8 bg-slate-800/70 rounded border border-slate-700/40"></div>
+<div class="h-8 bg-slate-800/70 rounded border border-slate-700/40"></div>
+</div>
+<div class="text-[9px] font-mono text-slate-400">Live Cart &amp; Checkout Flow</div>
+</div>
+</div>
+<div class="p-5 flex-1 flex flex-col justify-between">
+<div>
+<h3 class="text-base font-semibold text-white group-hover:text-brand-400 transition-colors mb-2">
+                E-Commerce App
+              </h3>
+<p class="text-xs text-slate-400 leading-relaxed">
+                MERN E-Commerce Platform. The platform features dynamic product catalog with filtering and sorting, real-time search, seamless cart updates, secure checkout, and a comprehensive admin dashboard with real-time analytics and user management capabilities.
+              </p>
+</div>
+<div class="pt-4 mt-4 border-t border-slate-800/80 flex items-center justify-between">
+<span class="text-[11px] font-mono text-brand-400">MERN Stack</span>
+<a aria-label="Live Demo: E-Commerce App" class="text-xs text-slate-400 hover:text-white inline-flex items-center gap-1 font-medium transition" href="#contact">
+<span>Live Demo</span>
+<i aria-hidden="true" class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+</a>
+</div>
+</div>
+</div>
+<!-- Card 5: Airline Booking System Mockup -->
+<div class="group flex flex-col rounded-2xl bg-dark-900 border border-slate-800 hover:border-slate-600 transition-all duration-300 overflow-hidden hover:shadow-xl hover:shadow-indigo-950/30">
+<div aria-hidden="true" class="h-48 bg-slate-900 border-b border-slate-800 relative overflow-hidden flex flex-col items-center justify-center p-4 bg-gradient-to-br from-slate-900 to-sky-950/40">
+<div class="w-full h-full rounded-xl border border-slate-700/60 bg-dark-950/80 p-3 flex flex-col justify-between font-mono text-[10px] text-slate-400">
+<div class="flex items-center justify-between">
+<span class="text-sky-400">AB Airlines UI</span>
+<i aria-hidden="true" class="fa-solid fa-plane-departure text-slate-400"></i>
+</div>
+<div class="text-slate-400 text-[9px]">Flight Search • Seat Grid • Booking</div>
+<div class="text-slate-400 text-[9px] pt-1 border-t border-slate-800">UX / UI System Design</div>
+</div>
+</div>
+<div class="p-5 flex-1 flex flex-col justify-between">
+<div>
+<h3 class="text-base font-semibold text-white group-hover:text-brand-400 transition-colors mb-2">
+                Airline Booking System Mockup
+              </h3>
+<p class="text-xs text-slate-400 leading-relaxed">
+                Side Project: Conceptual design showcasing an intuitive UI for flight search, seat selection, and booking confirmation, focusing on user experience and workflow efficiency.
+              </p>
+</div>
+<div class="pt-4 mt-4 border-t border-slate-800/80 flex items-center justify-between">
+<span class="text-[11px] font-mono text-brand-400">UI / UX Design</span>
+<a aria-label="Prototype: Airline Booking System Mockup" class="text-xs text-slate-400 hover:text-white inline-flex items-center gap-1 font-medium transition" href="#contact">
+<span>Prototype</span>
+<i aria-hidden="true" class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+</a>
+</div>
+</div>
+</div>
+<!-- Card 6: Airline Booking System Prototype -->
+<div class="group flex flex-col rounded-2xl bg-dark-900 border border-slate-800 hover:border-slate-600 transition-all duration-300 overflow-hidden hover:shadow-xl hover:shadow-indigo-950/30">
+<div aria-hidden="true" class="h-48 bg-slate-900 border-b border-slate-800 relative overflow-hidden flex flex-col items-center justify-center p-4 bg-gradient-to-br from-slate-900 to-cyan-950/40">
+<div class="w-full h-full rounded-xl border border-slate-700/60 bg-dark-950/80 p-3 flex flex-col justify-between font-mono text-[10px] text-slate-400">
+<div class="flex items-center justify-between text-cyan-400">
+<span>Interactive Flight Engine</span>
+<i aria-hidden="true" class="fa-solid fa-ticket"></i>
+</div>
+<div class="text-slate-400 text-[9px]">State Management &amp; Reservation</div>
+<div class="text-slate-400 text-[9px] pt-1 border-t border-slate-800">Real-time Ticket Handling</div>
+</div>
+</div>
+<div class="p-5 flex-1 flex flex-col justify-between">
+<div>
+<h3 class="text-base font-semibold text-white group-hover:text-brand-400 transition-colors mb-2">
+                Airline Booking System Prototype
+              </h3>
+<p class="text-xs text-slate-400 leading-relaxed">
+                Side Project: Interactive prototype simulating end-to-end airline booking functionalities, including flight searches, reservation, payment processing, and real-time ticket management.
+              </p>
+</div>
+<div class="pt-4 mt-4 border-t border-slate-800/80 flex items-center justify-between">
+<span class="text-[11px] font-mono text-brand-400">Prototype • Frontend</span>
+<a aria-label="Demo: Airline Booking System Prototype" class="text-xs text-slate-400 hover:text-white inline-flex items-center gap-1 font-medium transition" href="#contact">
+<span>Demo</span>
+<i aria-hidden="true" class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+</a>
+</div>
+</div>
+</div>
+<!-- Card 7: Short Courses Capstone -->
+<div class="group flex flex-col rounded-2xl bg-dark-900 border border-slate-800 hover:border-slate-600 transition-all duration-300 overflow-hidden hover:shadow-xl hover:shadow-indigo-950/30">
+<div aria-hidden="true" class="h-48 bg-slate-900 border-b border-slate-800 relative overflow-hidden flex flex-col items-center justify-center p-4 bg-gradient-to-br from-slate-900 to-amber-950/40">
+<div class="w-full h-full rounded-xl border border-slate-700/60 bg-dark-950/80 p-3 flex flex-col justify-between font-mono text-[10px] text-slate-400">
+<div class="flex items-center justify-between text-amber-400">
+<span>Zuitt Bootcamp Capstone</span>
+<i aria-hidden="true" class="fa-solid fa-graduation-cap"></i>
+</div>
+<div class="text-slate-400 text-[9px]">Web Development Mastery</div>
+<div class="text-slate-400 text-[9px] pt-1 border-t border-slate-800">Portfolio Hub &amp; Certification</div>
+</div>
+</div>
+<div class="p-5 flex-1 flex flex-col justify-between">
+<div>
+<h3 class="text-base font-semibold text-white group-hover:text-brand-400 transition-colors mb-2">
+                Short Courses Capstone
+              </h3>
+<p class="text-xs text-slate-400 leading-relaxed">
+                We Design our own portfolio that showcases the things we learn in Zuitt Bootcamp. Comprehensive hands-on implementation of responsive web design and JavaScript logic.
+              </p>
+</div>
+<div class="pt-4 mt-4 border-t border-slate-800/80 flex items-center justify-between">
+<span class="text-[11px] font-mono text-brand-400">Zuitt Capstone</span>
+<a aria-label="Explore: Short Courses Capstone" class="text-xs text-slate-400 hover:text-white inline-flex items-center gap-1 font-medium transition" href="#contact">
+<span>Explore</span>
+<i aria-hidden="true" class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+</a>
+</div>
+</div>
+</div>
+<!-- Card 8: Short Courses Capstone 2 / Advanced -->
+<div class="group flex flex-col rounded-2xl bg-dark-900 border border-slate-800 hover:border-slate-600 transition-all duration-300 overflow-hidden hover:shadow-xl hover:shadow-indigo-950/30">
+<div aria-hidden="true" class="h-48 bg-slate-900 border-b border-slate-800 relative overflow-hidden flex flex-col items-center justify-center p-4 bg-gradient-to-br from-slate-900 to-rose-950/40">
+<div class="w-full h-full rounded-xl border border-slate-700/60 bg-dark-950/80 p-3 flex flex-col justify-between font-mono text-[10px] text-slate-400">
+<div class="flex items-center justify-between text-rose-400">
+<span>Full-Stack Module</span>
+<i aria-hidden="true" class="fa-solid fa-code-branch"></i>
+</div>
+<div class="text-slate-400 text-[9px]">Database Integration &amp; Deployment</div>
+<div class="text-slate-400 text-[9px] pt-1 border-t border-slate-800">Advanced Project Modules</div>
+</div>
+</div>
+<div class="p-5 flex-1 flex flex-col justify-between">
+<div>
+<h3 class="text-base font-semibold text-white group-hover:text-brand-400 transition-colors mb-2">
+                Short Courses Capstone
+              </h3>
+<p class="text-xs text-slate-400 leading-relaxed">
+                Placeholder for your Short courses Capstone. Focuses on system architecture, database optimization, and deployment workflows with modern tooling.
+              </p>
+</div>
+<div class="pt-4 mt-4 border-t border-slate-800/80 flex items-center justify-between">
+<span class="text-[11px] font-mono text-brand-400">Capstone II</span>
+<a aria-label="Explore: Short Courses Capstone" class="text-xs text-slate-400 hover:text-white inline-flex items-center gap-1 font-medium transition" href="#contact">
+<span>Explore</span>
+<i aria-hidden="true" class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- END: Projects Section -->
+<!-- BEGIN: Contact Me Section -->
+<section aria-labelledby="contact-heading" class="py-24 border-t border-slate-800/80 bg-dark-900/20 relative" id="contact">
+<div class="max-w-7xl mx-auto px-6">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+<!-- Left Side: Contact Information (Direct match to Image 1) -->
+<div class="lg:col-span-5 space-y-8">
+<div>
+<h2 id="contact-heading" class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight mb-4">
+              Contact Me
+            </h2>
+<p class="text-slate-400 text-sm leading-relaxed">
+              Have a question, proposed project, or engineering initiative? Feel free to reach out directly through any of the channels below.
+            </p>
+</div>
+<!-- Contact Details List -->
+<div class="space-y-6 pt-2">
+<!-- Phone -->
+<div class="flex items-start gap-4">
+<div class="w-10 h-10 rounded-xl bg-dark-900 border border-slate-800 flex items-center justify-center text-brand-400 shrink-0">
+<i aria-hidden="true" class="fa-solid fa-phone text-sm"></i>
+</div>
+<div>
+<span class="text-[11px] font-mono uppercase tracking-wider text-slate-400 block">Cellphone Number</span>
+<a class="text-sm font-semibold text-white hover:text-brand-400 transition" href="tel:+15552348901">
+                  +1 (555) 234-8901
+                </a>
+</div>
+</div>
+<!-- Address -->
+<div class="flex items-start gap-4">
+<div class="w-10 h-10 rounded-xl bg-dark-900 border border-slate-800 flex items-center justify-center text-brand-400 shrink-0">
+<i aria-hidden="true" class="fa-solid fa-location-dot text-sm"></i>
+</div>
+<div>
+<span class="text-[11px] font-mono uppercase tracking-wider text-slate-400 block">Studio Address</span>
+<p class="text-sm font-semibold text-white">
+                  450 Mission St, San Francisco, CA 94105
+                </p>
+</div>
+</div>
+<!-- Remote Base -->
+<div class="flex items-start gap-4">
+<div class="w-10 h-10 rounded-xl bg-dark-900 border border-slate-800 flex items-center justify-center text-brand-400 shrink-0">
+<i aria-hidden="true" class="fa-solid fa-globe text-sm"></i>
+</div>
+<div>
+<span class="text-[11px] font-mono uppercase tracking-wider text-slate-400 block">Remote Base</span>
+<p class="text-sm font-semibold text-white">
+                  Available Worldwide (PST / UTC-8 timezone)
+                </p>
+</div>
+</div>
+</div>
+<!-- Connect Channels / Socials -->
+<div class="pt-4 border-t border-slate-800/80">
+<span class="text-[11px] font-mono uppercase tracking-wider text-slate-400 block mb-3">
+              CONNECT CHANNELS
+            </span>
+<div class="flex items-center gap-3">
+<!-- Gmail -->
+<a class="w-10 h-10 rounded-xl bg-dark-900 border border-slate-800 flex items-center justify-center text-slate-300 hover:text-red-400 hover:border-red-500/50 hover:-translate-y-0.5 transition duration-200" aria-label="Send an email" href="mailto:contact@gilgabunada.dev" title="Send Email">
+<i aria-hidden="true" class="fa-solid fa-envelope text-base"></i>
+</a>
+<!-- Facebook -->
+<a class="w-10 h-10 rounded-xl bg-dark-900 border border-slate-800 flex items-center justify-center text-slate-300 hover:text-blue-500 hover:border-blue-500/50 hover:-translate-y-0.5 transition duration-200" href="https://facebook.com" aria-label="Facebook (opens in a new tab)" rel="noopener noreferrer" target="_blank" title="Facebook">
+<i aria-hidden="true" class="fa-brands fa-facebook-f text-base"></i>
+</a>
+<!-- LinkedIn -->
+<a class="w-10 h-10 rounded-xl bg-dark-900 border border-slate-800 flex items-center justify-center text-slate-300 hover:text-blue-400 hover:border-blue-400/50 hover:-translate-y-0.5 transition duration-200" href="https://linkedin.com" aria-label="LinkedIn (opens in a new tab)" rel="noopener noreferrer" target="_blank" title="LinkedIn">
+<i aria-hidden="true" class="fa-brands fa-linkedin-in text-base"></i>
+</a>
+<!-- GitHub -->
+<a class="w-10 h-10 rounded-xl bg-dark-900 border border-slate-800 flex items-center justify-center text-slate-300 hover:text-white hover:border-slate-500 hover:-translate-y-0.5 transition duration-200" href="https://github.com" aria-label="GitHub (opens in a new tab)" rel="noopener noreferrer" target="_blank" title="GitHub">
+<i aria-hidden="true" class="fa-brands fa-github text-base"></i>
+</a>
+</div>
+</div>
+</div>
+<!-- Right Side: Contact Form (Direct match to Image 1) -->
+<div class="lg:col-span-7">
+<div class="rounded-3xl bg-dark-900 border border-slate-800/90 p-8 sm:p-10 shadow-2xl relative">
+<form class="space-y-6" id="portfolio-contact-form" novalidate="">
+<!-- Name Input -->
+<div>
+<label class="block text-[11px] font-mono uppercase tracking-wider text-slate-400 mb-2" for="user_name">
+                  YOUR NAME
+                </label>
+<input class="w-full px-4 py-3.5 rounded-xl bg-dark-950 border border-slate-800 text-slate-100 placeholder-slate-400 focus:outline-none focus:border-brand-500 focus:ring-1 focus:ring-brand-500 text-sm transition" autocomplete="name" id="user_name" placeholder="e.g. Gil Gabunada" required="" type="text"/>
+</div>
+<!-- Email/Phone Input -->
+<div>
+<label class="block text-[11px] font-mono uppercase tracking-wider text-slate-400 mb-2" for="user_contact">
+                  EMAIL OR PHONE NUMBER
+                </label>
+<input class="w-full px-4 py-3.5 rounded-xl bg-dark-950 border border-slate-800 text-slate-100 placeholder-slate-400 focus:outline-none focus:border-brand-500 focus:ring-1 focus:ring-brand-500 text-sm transition" id="user_contact" placeholder="e.g. alex@company.com or +1 415-000-0000" required="" type="text"/>
+</div>
+<!-- Message Input -->
+<div>
+<label class="block text-[11px] font-mono uppercase tracking-wider text-slate-400 mb-2" for="user_message">
+                  PROJECT BRIEF / MESSAGE
+                </label>
+<textarea class="w-full px-4 py-3.5 rounded-xl bg-dark-950 border border-slate-800 text-slate-100 placeholder-slate-400 focus:outline-none focus:border-brand-500 focus:ring-1 focus:ring-brand-500 text-sm transition resize-none" id="user_message" placeholder="Tell me about your product scope, timeline, and goals..." required="" rows="4"></textarea>
+</div>
+<!-- Submit Button -->
+<p aria-live="polite" class="text-sm font-medium text-emerald-400 min-h-[1.25rem]" id="form-status" role="status"></p>
+<div class="flex justify-end pt-2">
+<button class="inline-flex items-center gap-2 px-7 py-3 rounded-full bg-white hover:bg-slate-200 text-dark-950 font-bold text-xs uppercase tracking-wider transition-all duration-300 hover:scale-105 shadow-md shadow-white/10" type="submit">
+<span>Send Message</span>
+<i aria-hidden="true" class="fa-solid fa-arrow-right text-[11px]"></i>
+</button>
+</div>
+</form>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- END: Contact Me Section -->
+</main>
+<!-- BEGIN: Main Footer -->
+<footer class="py-8 border-t border-slate-800/80 bg-dark-950 text-slate-400 text-xs">
+<div class="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+<div class="flex items-center gap-2">
+<span class="font-bold text-slate-300">GIL</span>
+<span>—</span>
+<span class="text-slate-400 font-mono">Computer Engineer</span>
+</div>
+<div>
+<p>© 2026 Gil. All rights reserved.</p>
+</div>
+</div>
+</footer>
+<!-- END: Main Footer -->
+<!-- BEGIN: Interactive Scripts -->
+<script data-purpose="interactive-navigation">
+    // Mobile navigation toggle (keeps aria-expanded in sync, Escape closes)
+    const menuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    function setMenu(open) {
+      mobileMenu.classList.toggle('hidden', !open);
+      menuBtn.setAttribute('aria-expanded', String(open));
+    }
+
+    if (menuBtn && mobileMenu) {
+      menuBtn.addEventListener('click', () => {
+        setMenu(mobileMenu.classList.contains('hidden'));
+      });
+
+      mobileMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => setMenu(false));
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && !mobileMenu.classList.contains('hidden')) {
+          setMenu(false);
+          menuBtn.focus();
+        }
+      });
+    }
+  </script>
+<script data-purpose="contact-form">
+    // Accessible form feedback (announced by screen readers via role="status")
+    const form = document.getElementById('portfolio-contact-form');
+    const statusEl = document.getElementById('form-status');
+    if (form && statusEl) {
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        if (!form.checkValidity()) {
+          form.reportValidity();
+          return;
+        }
+        statusEl.textContent = 'Message sent! Thank you for reaching out.';
+        form.reset();
+      });
+    }
+  </script>
+<!-- END: Interactive Scripts -->
+</body></html>
